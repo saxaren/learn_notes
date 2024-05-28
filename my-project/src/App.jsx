@@ -1,10 +1,11 @@
 import { useState } from "react";
 import NoteQuiz from "./components/NoteQuiz";
+import Answer from "./components/Answer";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <>
@@ -15,11 +16,12 @@ function App() {
 
         <p>
           <NoteQuiz />
+          {/* <Answer /> */}
         </p>
         <img src="./src/images/C-Major-Scale_cut.jpg" alt="" />
       </div>
 
-      <p className="read-the-docs">clisk to send a mail</p>
+      <p className="read-the-docs">click to send a mail</p>
     </>
   );
 }
