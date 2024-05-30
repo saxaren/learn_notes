@@ -1,26 +1,20 @@
 [
   {
+    "note": "C",
+    "options": ["A", "B", "C", "D"],
     "correct": "C",
     "image": "./src/images/notes/C.jpg"
   },
   {
+    "note": "D",
+    "options": ["A", "B", "C", "D"],
     "correct": "D",
     "image": "./src/images/notes/D.jpg"
   },
   {
+    "note": "E",
+    "options": ["A", "B", "C", "D"],
     "correct": "E",
     "image": "./src/images/notes/E.jpg"
-  },
-  {
-    "correct": "F",
-    "image": "./src/images/notes/F.jpg"
-  },
-  {
-    "correct": "G",
-    "image": "./src/images/notes/G.jpg"
-  },
-  {
-    "correct": "A",
-    "image": "./src/images/notes/A.jpg"
   }
 ]

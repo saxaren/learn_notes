@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NoteQuiz from "./components/NoteQuiz";
-// import Answer from "./components/Answer";
 import "./App.css";
 
 function App() {
@@ -57,10 +56,9 @@ function App() {
       <h1>Learn Notes</h1>
       <div className="noter">
         <NoteQuiz
-          note={currentQuestion.note}
+          correct={currentQuestion.correct}
           image={currentQuestion.image}
-          options={currentQuestion.options}
-          onAnswerSelected={handleAnswerSelected}
+          onAnswered={handleAnswerSelected}
         />
         {feedback && <p>{feedback}</p>}
         <button onClick={handleNextQuestion}>Nästa fråga</button>
