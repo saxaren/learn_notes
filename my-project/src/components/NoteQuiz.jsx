@@ -1,38 +1,12 @@
-const NoteQuiz = () => {
-  console.log("NoteQuiz");
+import React from "react";
+import Answer from "./Answer";
+
+const NoteQuiz = ({ note, image, options, onAnswerSelected }) => {
   return (
     <div>
-      <p>Hello World!</p>
-
       <p>Vilken not är det här?</p>
-
-      <p id="question" style={{ fontFamily: "Lassus-7BRA" }}>
-        %
-      </p>
-      <div>
-        <p>välj rätt svar</p>
-        <label>
-          <input type="radio" name="answer" value="a" />
-          Alternativ A
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="answer" value="a" />
-          Alternativ B
-        </label>
-        <br />
-
-        <label>
-          <input type="radio" name="answer" value="a" />
-          Alternativ C
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="answer" value="a" />
-          Alternativ D
-        </label>
-        <br />
-      </div>
+      <img src={image} alt={`Not ${note}`} />
+      <Answer options={options} onAnswerSelected={onAnswerSelected} />
     </div>
   );
 };
