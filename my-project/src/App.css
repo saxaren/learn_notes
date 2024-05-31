@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.app-container {
+  position: relative;
+}
+
+.question-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

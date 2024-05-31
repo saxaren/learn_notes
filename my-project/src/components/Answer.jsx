@@ -1,6 +1,6 @@
 import React from "react";
 
-const Answer = ({ options, onAnswerSelected }) => {
+const Answer = ({ options, onAnswerSelected, questionNumber }) => {
   const answerOptionStyle = {
     display: "inline-flex",
     alignItems: "center",
@@ -14,6 +14,7 @@ const Answer = ({ options, onAnswerSelected }) => {
   return (
     <div>
       <p>Välj rätt svar:</p>
+      <p>fråga nummer {questionNumber}</p>
       <div style={answerOptionsStyle}>
         {options.map((option, index) => (
           <div key={index} style={answerOptionStyle}>

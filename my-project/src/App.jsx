@@ -52,13 +52,17 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
+      <div className="question-number">
+        Fråga {currentQuestionIndex + 1} av {questions.length}
+      </div>
       <h1>Learn Notes</h1>
       <div className="noter">
         <NoteQuiz
-          correct={currentQuestion.correct}
+          note={currentQuestion.note}
           image={currentQuestion.image}
-          onAnswered={handleAnswerSelected}
+          options={currentQuestion.options}
+          onAnswerSelected={handleAnswerSelected}
         />
         {feedback && <p>{feedback}</p>}
         <button onClick={handleNextQuestion}>Nästa fråga</button>
