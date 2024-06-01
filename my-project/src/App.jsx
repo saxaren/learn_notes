@@ -27,10 +27,12 @@ function App() {
   }, []);
 
   if (questions.length === 0) {
-    return <div>Loading...</div>; // Visa laddningsmeddelande medan data hämtas
+    return <div>Loading...</div>; // Show loading message while data is being fetched
   }
 
   const currentQuestion = questions[currentQuestionIndex];
+  const options = generateOptions(currentQuestion.correct); // Generate options dynamically
+  console.log("Current Question:", currentQuestion); // Log current question for debugging
 
   const handleAnswerSelected = (answer) => {
     setSelectedAnswer(answer);
@@ -59,10 +61,11 @@ function App() {
       <h1>Learn Notes</h1>
       <div className="noter">
         <NoteQuiz
-          note={currentQuestion.note}
+          correct={currentQuestion.correct}
           image={currentQuestion.image}
-          options={currentQuestion.options}
+          options={options}
           onAnswerSelected={handleAnswerSelected}
+          questionNumber={currentQuestionIndex + 1}
         />
         {feedback && <p>{feedback}</p>}
         <button onClick={handleNextQuestion}>Nästa fråga</button>
@@ -71,8 +74,23 @@ function App() {
   );
 }
 
+const generateOptions = (correct) => {
+  const allNotes = ["A", "B", "C", "D", "E", "F", "G"];
+  const options = [];
+
+  while (options.length < 3) {
+    const randomNote = allNotes[Math.floor(Math.random() * allNotes.length)];
+    if (randomNote !== correct && !options.includes(randomNote)) {
+      options.push(randomNote);
+    }
+  }
+
+  options.push(correct);
+  return shuffleArray(options);
+};
+
 const shuffleArray = (array) => {
-  let shuffledArray = array.slice(); // Skapa en kopia av arrayen
+  let shuffledArray = array.slice(); // Create a copy of the array
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];

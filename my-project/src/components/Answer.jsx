@@ -1,23 +1,22 @@
 import React from "react";
 
 const Answer = ({ options, onAnswerSelected, questionNumber }) => {
-  const answerOptionStyle = {
-    display: "inline-flex",
-    alignItems: "center",
-    marginRight: "10px",
-  };
-
-  const answerOptionsStyle = {
-    display: "flex",
-  };
+  console.log("Answer options:", options); // Log options for debugging
 
   return (
     <div>
       <p>Välj rätt svar:</p>
-      <p>fråga nummer {questionNumber}</p>
-      <div style={answerOptionsStyle}>
+      <p>Fråga nummer {questionNumber}</p>
+      <div style={{ display: "flex" }}>
         {options.map((option, index) => (
-          <div key={index} style={answerOptionStyle}>
+          <div
+            key={index}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              marginRight: "10px",
+            }}
+          >
             <label>
               <input
                 type="radio"
