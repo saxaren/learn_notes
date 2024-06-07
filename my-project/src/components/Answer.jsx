@@ -1,36 +1,62 @@
-import React from "react";
+import PropTypes from "prop-types";
 
-const Answer = ({ options, onAnswerSelected, questionNumber }) => {
-  console.log("Answer options:", options); // Log options for debugging
+const Answer = ({
+  options,
+  // correctAnswer,
+  selectedAnswer,
+  onAnswerSelected,
+  questionNumber,
+  answerSubmitted,
+}) => {
+  console.log("Answer options:", options);
+
+  const answerOptionStyle = {
+    display: "inline-flex",
+    alignItems: "center",
+    marginRight: "0 5px",
+  };
+
+  const answerOptionsContainerStyle = {
+    display: "flex",
+    justifyContent: "center",
+  };
 
   return (
     <div>
       <p>Välj rätt svar:</p>
-      <p>Fråga nummer {questionNumber}</p>
-      <div style={{ display: "flex" }}>
+      <div style={answerOptionsContainerStyle}>
         {options.map((option, index) => (
-          <div
-            key={index}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              marginRight: "10px",
-            }}
-          >
+          <div key={index} style={answerOptionStyle}>
             <label>
               <input
                 type="radio"
                 name="answer"
                 value={option}
+                checked={selectedAnswer === option}
                 onChange={() => onAnswerSelected(option)}
+                disabled={answerSubmitted}
               />
               {option}
             </label>
           </div>
         ))}
       </div>
+      <p style={{ color: "orange" }}>Fråga nummer {questionNumber}</p>
     </div>
   );
+};
+
+Answer.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  correctAnswer: PropTypes.string.isRequired,
+  selectedAnswer: PropTypes.string,
+  onAnswerSelected: PropTypes.func.isRequired,
+  questionNumber: PropTypes.number.isRequired,
+  answerSubmitted: PropTypes.bool.isRequired,
+};
+
+Answer.defaultProps = {
+  selectedAnswer: "",
 };
 
 export default Answer;

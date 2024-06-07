@@ -1,7 +1,7 @@
 .app-container {
   position: relative;
   max-width: 1280px;
-  margin: 0 auto; /* Centrera horisontellt */
+  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
@@ -18,9 +18,33 @@
   font-weight: bold;
 }
 
+nav {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
 .noter {
-  margin: 0 auto; /* Centrera innehållet */
-  max-width: 600px; /* Anpassa maxbredd efter ditt behov */
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 label {
@@ -38,4 +62,26 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.high-scores-container {
+  padding: 1rem;
+  background-color: green;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+.high-scores-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.high-scores-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.high-scores-container ul li {
+  font-size: 1.5em;
+  margin: 10px 0;
 }
