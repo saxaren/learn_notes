@@ -52,11 +52,11 @@ Answer.propTypes = {
   selectedAnswer: PropTypes.string,
   onAnswerSelected: PropTypes.func.isRequired,
   questionNumber: PropTypes.number.isRequired,
-  answerSubmitted: PropTypes.bool.isRequired,
+  answerSubmitted: PropTypes.bool,
 };
 
-Answer.defaultProps = {
-  selectedAnswer: "",
-};
+// Answer.defaultProps = {
+//   selectedAnswer: "",
+// };
 
 export default Answer;
